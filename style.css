@@ -1,20 +1,16 @@
 .page {
-    /*position: relative;
-    width: 1280px;
-    height: 1217px;*/
+    max-width: 1280px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     background-color: #000000;
-    overflow: hidden;
-    
+    overflow: hidden;    
 }
 
 .header {
-    width: 882px;
+    margin: 45px auto 0;
+    max-width: 70%;
     height: 74px;
-    background-color: #000000;
-
-    border: 1px solid black;
+    border-bottom: 1px solid #545454;
 }
 
 .logo {
@@ -23,7 +19,7 @@
 }
 
 .profile {
-    max-width: 882px;
+    max-width: 70%;
     margin: 40px auto 0;
     display: flex;
     flex-direction: row;
@@ -32,15 +28,22 @@
 .profile__avatar {
     width: 120px;
     height: 120px;
-    border: 50%;
+    border-radius: 50%;
+    margin-right: 30px;
 }
 
 .profile__info {
+    display: flex;
+    flex-wrap: wrap;
     max-width: 336px;
     color: #ffffff;
 }
 
 .profile__name {
+    max-width: 295px;
+    margin: 0;
+    margin-top: 18px;
+    margin-right: 17px;
     font-style: normal;
     font-weight: 500;
     font-size: 42px;
@@ -48,8 +51,11 @@
 }
 
 .profile__edit-button {
+    margin: 0;
+    margin-top: 35px;
     width: 24px;
     height: 24px;
+    background-color: #000000;
     border: 1px solid #ffffff;
 }
 
@@ -59,8 +65,85 @@
 }
 
 .profile__text {
+    max-width: 318px;
+    margin: 0;
+    margin-top: 16px;
+    margin-bottom: 25px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    background-color: #000000;
+    place-self: center;
+    margin: 0;
+    margin-left: 245px;
+}
+
+.button__image {
+    width: 22px;
+    height: 22px;
+}
+
+.elements {
+    max-width: 70%;
+    margin: 51px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 21px;
+    column-gap: 18px;
+}
+
+.element__item {
+    max-width: 282px;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.element__image {
+    max-width: 282px;
+    height: 282px;
+}
+
+.element__card {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto 31px;
+    color: #000000;
+}
+
+.element__caption {
+    margin-left: 21px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.element__image-like {
+    width: 20px;
+    height: 18px;
+    margin-top: 6px;
+    margin-right: 7px;
+}
+
+.footer {
+    margin: 66px auto 60px;
+    max-width: 70%;
+}
+
+.footer__copyright {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
 }
