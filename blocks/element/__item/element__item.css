@@ -1,0 +1,23 @@
+.element__item {
+    margin: 0 auto;
+    border: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 451px) and (max-width: 800px) {
+    .element__item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .element__item {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .element__item:last-of-type {
+        margin-bottom: 0;
+    }
+}

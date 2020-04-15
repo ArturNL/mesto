@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./vendor/normalise.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./page/index.css">
     <title>Место</title>
 </head>
 <body>
@@ -18,57 +17,63 @@
             <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
             <div class="profile__info">
                 <p class="profile__name">Жак-Ив Кусто</p>
-                <button class="profile__edit-button">
-                    <img class="profile__edit-button_image" src="./images/editbutton.png" alt="Редактирование">
-                </button>
+                <button class="profile__edit-button" type="button"></button>
                 <p class="profile__text">Исследователь океана</p>
             </div>
-            <button class="button">
-                <img class="button__image" src="./images/plusbutton.png" alt="Добавить">
-            </button>
+            <button class="profile__add-button" type="button"></button>
+        </section>
+<!--Попап-->        
+        <section class="popup popup_opened">
+            <button class="popup__close-icon" type="button"></button>
+            <div class="popup__container">
+                <p class="popup__title">Редактировать профиль</p>
+                <input class="popup__name" type="text" value="Жак-Ив Кусто">
+                <input class="popup__text" type="text" value="Исследователь океана">
+                <input class="popup__button" type="submit" value="Сохранить">
+            </div>
         </section>
 <!--Элементы-->
-        <section class="elements">
+        <section class="element">
             <figure class="element__item">
                 <img class="element__image" src="./images/dombai.png" alt="Домбай">
                 <div class="element__card">
                     <figcaption class="element__caption">Домбай</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
             <figure class="element__item">
                 <img class="element__image" src="./images/elbrus.png" alt="Эльбрус">
                 <div class="element__card">
                     <figcaption class="element__caption">Гора Эльбрус</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
             <figure class="element__item">
                 <img class="element__image" src="./images/karachaevck.png" alt="Карачаевск">
                 <div class="element__card">
                     <figcaption class="element__caption">Карачаевск</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
             <figure class="element__item">
                 <img class="element__image" src="./images/karachaevck.png" alt="Карачаевск">
                 <div class="element__card">
                     <figcaption class="element__caption">Карачаевск</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
             <figure class="element__item">
                 <img class="element__image" src="./images/dombai.png" alt="Домбай">
                 <div class="element__card">
                     <figcaption class="element__caption">Домбай</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
             <figure class="element__item">
                 <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
                 <div class="element__card">
                     <figcaption class="element__caption">Гора Эльбрус</figcaption>
-                    <img class="element__image-like" src="./images/heartlike.png" alt="Лайк">
+                    <button class="element__image-like"></button>
                 </div>
             </figure>
         </section>
@@ -77,5 +82,6 @@
             <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
         </footer>
     </div>
+    <script src="./page/index.js"></script>
 </body>
 </html>

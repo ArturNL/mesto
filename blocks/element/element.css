@@ -1,0 +1,40 @@
+@import url('./__item/element__item.css');
+@import url('./__image/element__image.css');
+@import url('./__card/element__card.css');
+@import url('./__caption/element__caption.css');
+@import url('./__image-like/element__image-like.css');
+
+.element {
+    max-width: 75%;
+    margin: 51px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 21px;
+    column-gap: 18px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+    .element {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 699px) {
+    .element {
+        max-width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .element {
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px auto 0;
+        padding: 0;
+    }
+}
