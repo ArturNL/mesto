@@ -19,14 +19,17 @@ function popupOff() {
 popupOpen.addEventListener('click', popupOn);
 popupClose.addEventListener('click', popupOff);
 
-function formEditProfile() {
+function formSubmitHandler(evt) {
+    evt.preventDefault();
+
     profileName.innerHTML = `${nameInput.value}`;
     profileJob.innerHTML = `${jobInput.value}`;
     
     popupOff();
 }
 
-popupSave.addEventListener('click', formEditProfile);
+formElement.addEventListener('submit', formSubmitHandler);
+popupSave.addEventListener('click', formSubmitHandler);
 
 function loadProfileInPopup() {
     nameInput.value = profileName.textContent;
