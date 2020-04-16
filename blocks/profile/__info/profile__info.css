@@ -1,4 +1,5 @@
 .profile__info {
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
     color: #ffffff;
