@@ -9,12 +9,13 @@
     .profile__info {
         max-width: 100%;
         justify-content: center;
-        margin-top: 10px;
+        margin: 10px auto 0;
     }
 }
 
 @media screen and (max-width: 429px) {
     .profile__info {
+        max-width: 100%;
         justify-content: center;
     }
 }

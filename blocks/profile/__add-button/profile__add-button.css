@@ -23,7 +23,19 @@
     }
 }
 
-@media screen and (min-width: 701px) and (max-width: 899px) {
+@media screen and (min-width: 900px) and (max-width: 979px) {
+    .profile__add-button {
+        margin-left: 25%;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 899px) {
+    .profile__add-button {
+        margin-left: 15%;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 800px) {
     .profile__add-button {
         width: 120px;
         margin-left: 5%;
