@@ -1,7 +1,9 @@
 .popup-add__container {
     display: block;
-    margin: -22px auto;
+    margin: 0 auto;
+    margin-top: 150px;
     width: 430px;
+    height: 350px;
     background-color: #ffffff;
     border-radius: 10px;
 }

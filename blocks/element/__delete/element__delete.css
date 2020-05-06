@@ -1,4 +1,4 @@
-.element__image-delete {
+.element__delete {
     position: absolute;
     top: 5%;
     left: 90%;
@@ -13,6 +13,6 @@
     outline: none;
 }
 
-.element__image-delete:hover {
+.element__delete:hover {
     opacity: 0.6;
 }

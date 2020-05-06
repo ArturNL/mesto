@@ -1,11 +1,14 @@
 @import url('./__item/element__item.css');
-@import url('./__image-delete/element__image-delete.css');
+@import url('./__delete/element__delete.css');
 @import url('./__image/element__image.css');
 @import url('./__card/element__card.css');
 @import url('./__caption/element__caption.css');
-@import url('./__image-like/element__image-like.css');
+@import url('./__like/element__like.css');
+@import url('./__like/_active/element__like_active.css');
+@import url('./__delete/_active/element__delete_active.css');
 
 .element {
+    position: relative;
     max-width: 882px;
     margin: 51px auto 0;
     display: grid;

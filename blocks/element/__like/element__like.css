@@ -1,6 +1,4 @@
-@import url('./_active/element__image-like_active.css');
-
-.element__image-like {
+.element__like {
     width: 25px;
     height: 25px;
     margin-top: 0;
@@ -14,6 +12,6 @@
     outline: none;
 }
 
-.element__image-like:hover {
+.element__like:hover {
     opacity: 0.6;
 }
