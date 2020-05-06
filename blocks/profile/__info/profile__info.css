@@ -5,17 +5,10 @@
     color: #ffffff;
 }
 
-@media screen and (min-width: 430px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .profile__info {
         max-width: 100%;
         justify-content: center;
         margin: 10px auto 0;
-    }
-}
-
-@media screen and (max-width: 429px) {
-    .profile__info {
-        max-width: 100%;
-        justify-content: center;
     }
 }

@@ -1,4 +1,5 @@
-.popup__close-icon {
+.popup-add__close-icon {
+    /*display: flex;*/
     margin: auto;
     margin-top: -50px;
     margin-left: 420px;
@@ -13,13 +14,13 @@
     outline: none;
 }
 
-.popup__close-icon:hover {
+.popup-add__close-icon:hover {
     opacity: 0.6;
     border: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .popup__close-icon {
+    .popup-add__close-icon {
         margin-left: 95%;
     }
 }

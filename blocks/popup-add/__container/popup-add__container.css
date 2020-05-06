@@ -1,4 +1,4 @@
-.popup__container {
+.popup-add__container {
     display: block;
     margin: 0 auto;
     margin-top: 150px;
@@ -8,9 +8,8 @@
     border-radius: 10px;
 }
 
-
 @media screen and (max-width: 500px) {
-    .popup__container {
+    .popup-add__container {
         width: 80%;
     }
 }

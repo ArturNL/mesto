@@ -22,60 +22,46 @@
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
-<!--Попап-->        
-        <section class="popup popup_opened">
-            <button class="popup__close-icon" type="button"></button>
+<!--Попап editform-->        
+        <section class="popup">
             <form class="popup__container">
+                <button class="popup__close-icon" type="button"></button>
                 <p class="popup__title">Редактировать профиль</p>
-                <input class="popup__name" type="text" value="Жак-Ив Кусто">
-                <input class="popup__text" type="text" value="Исследователь океана">
+                <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто">
+                <input class="popup__text" type="text" name="job" placeholder="Исследователь океана">
                 <input class="popup__button" type="submit" value="Сохранить">
             </form>
         </section>
+<!--Попап addCard-->
+        <section class="popup-add">
+            <form class="popup-add__container">
+                <button class="popup-add__close-icon" type="button"></button>
+                <p class="popup-add__title">Новое место</p>
+                <input class="popup-add__name" name="name" type="text" placeholder="Название">
+                <input class="popup-add__link" name="image" type="url" placeholder="Ссылка на картинку">
+                <input class="popup-add__button" type="submit" value="Создать">
+            </form>
+        </section>
+<!--Попап Zoom-->
+        <section class="popup-zoom">
+            <div class="popup-zoom__container">
+                <button class="popup-zoom__close-icon" type="button"></button>
+                <img class="popup-zoom__image">
+                <p class="popup-zoom__name"></p>
+            </div>
+        </section>
 <!--Элементы-->
         <section class="element">
-            <div class="element__item">
-                <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                <div class="element__card">
-                    <p class="element__caption">Домбай</p>
-                    <button class="element__image-like"></button>
+            <template id="element-template">
+                <div class="element__item">
+                    <button class="element__delete"></button>
+                    <img class="element__image" alt="">
+                    <div class="element__card">
+                        <p class="element__caption"></p>
+                        <button class="element__like" type="button"></button>
+                    </div>
                 </div>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/elbrus.png" alt="Эльбрус">
-                <div class="element__card">
-                    <p class="element__caption">Гора Эльбрус</p>
-                    <button class="element__image-like"></button>
-                </div>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/karachaevck.png" alt="Карачаевск">
-                <div class="element__card">
-                    <p class="element__caption">Карачаевск</p>
-                    <button class="element__image-like"></button>
-                </div>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/karachaevck.png" alt="Карачаевск">
-                <div class="element__card">
-                    <p class="element__caption">Карачаевск</p>
-                    <button class="element__image-like"></button>
-                </div>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/dombai.png" alt="Домбай">
-                <div class="element__card">
-                    <p class="element__caption">Домбай</p>
-                    <button class="element__image-like"></button>
-                </div>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-                <div class="element__card">
-                    <p class="element__caption">Гора Эльбрус</p>
-                    <button class="element__image-like"></button>
-                </div>
-            </div>
+            </template>
         </section>
 <!--Подвал-->
         <footer class="footer">

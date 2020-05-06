@@ -1,7 +1,7 @@
-.popup__close-icon {
-    margin: auto;
-    margin-top: -50px;
-    margin-left: 420px;
+.popup-zoom__close-icon {
+    display: flex;
+    margin: 0;
+    margin-left: 98%;
     width: 60px;
     height: 60px;
     background-image: url('../../../images/CloseIcon.png');
@@ -13,13 +13,7 @@
     outline: none;
 }
 
-.popup__close-icon:hover {
+.popup-zoom__close-icon:hover {
     opacity: 0.6;
     border: 0;
-}
-
-@media screen and (max-width: 500px) {
-    .popup__close-icon {
-        margin-left: 95%;
-    }
 }
