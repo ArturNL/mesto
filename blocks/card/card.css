@@ -1,0 +1,44 @@
+@import url('./__container/card__container.css');
+@import url('./__delete/card__delete.css');
+@import url('./__image/card__image.css');
+@import url('./__item/card__item.css');
+@import url('./__caption/card__caption.css');
+@import url('./__like/card__like.css');
+@import url('./__like/_active/card__like_active.css');
+@import url('./__delete/_active/card__delete_active.css');
+
+.card {
+    position: relative;
+    max-width: 882px;
+    margin: 51px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 21px;
+    column-gap: 18px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 899px) {
+    .card {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 699px) {
+    .card {
+        max-width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px auto 0;
+        padding: 0;
+    }
+}

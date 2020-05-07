@@ -1,24 +1,23 @@
 const popup = document.querySelector('.popup');
 const popupOpen = document.querySelector('.profile__edit-button');
 const popupClose = popup.querySelector('.popup__close-icon');
-const popupSave = popup.querySelector('.popup__button');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__text');
 const formEdit = document.querySelector('.popup__container');
 const nameInput = formEdit.querySelector('.popup__name');
 const jobInput = formEdit.querySelector('.popup__text');
-const popupAdd = document.querySelector('.popup-add');
-const element = document.querySelector('.element');
+const popupAdd = document.querySelector('#popup-add');
+const card = document.querySelector('.card');
 const popupAddButton = document.querySelector('.profile__add-button');
-const popupCloseAddForm = popupAdd.querySelector('.popup-add__close-icon');
-const formAdd = document.querySelector('.popup-add__container');
-const addNameInput = formAdd.querySelector('.popup-add__name');
-const addCardInput = formAdd.querySelector('.popup-add__link');
-const elementTemplate = document.querySelector('#element-template').content;
-const zoom = document.querySelector('.popup-zoom');
-const zoomBtnClose = zoom.querySelector('.popup-zoom__close-icon');
-const zoomName = zoom.querySelector('.popup-zoom__name');
-const zoomImage = zoom.querySelector('.popup-zoom__image');
+const popupCloseAddForm = popupAdd.querySelector('#popup-add__close');
+const formAdd = document.querySelector('#popup-add__container');
+const addNameInput = formAdd.querySelector('#popup-add__name');
+const addCardInput = formAdd.querySelector('#popup-add__link');
+const cardTemplate = document.querySelector('#card-template').content;
+const zoom = document.querySelector('#popup-zoom');
+const zoomBtnClose = zoom.querySelector('.popup__close-icon-zoom');
+const zoomName = zoom.querySelector('.popup__caption');
+const zoomImage = zoom.querySelector('.popup__image');
 
 const initialCards = [
     {
@@ -61,50 +60,75 @@ function formSubmitHandler(evt) {
 }
 
 function popupEditForm() {
-    popupToggle(popup);
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
+    popupToggle(popup);
+}
+
+//ф-я для лайков
+function likeActive(evt) {
+    evt.target.classList.toggle('card__like_active');
+}
+
+//ф-я для удаления
+function cardDelete(evt) {
+    const removeCard = evt.target.closest('.card__container');
+    
+    const cardLike = removeCard.querySelector('.card__like');
+    cardLike.removeEventListener('click', likeActive);
+
+    const deleteBtn = removeCard.querySelector('.card__delete');
+    deleteBtn.removeEventListener('click', cardDelete);
+
+    const zoomImageCard = removeCard.querySelector('.card__image');
+    zoomImageCard.removeEventListener('click', imageZoom);
+
+    removeCard.remove();
+}
+
+//ф-я увелеичения изображения
+function imageZoom(evt) {
+    zoomName.textContent = evt.target.alt;
+    zoomImage.src = evt.target.src;
+    zoomImage.alt = evt.target.alt;
+    popupToggle(zoom);
+}
+
+function createCards(name, image) {
+    const cardItem = cardTemplate.cloneNode(true);
+    const cardImage = cardItem.querySelector('.card__image');
+    const cardLike = cardItem.querySelector('.card__like');
+    const deleteBtn = cardItem.querySelector('.card__delete');
+    cardImage.alt = name;
+    cardImage.src = image;
+    cardItem.querySelector('.card__caption').textContent = name;
+    
+    cardLike.addEventListener('click', likeActive);
+    deleteBtn.addEventListener('click', cardDelete);
+    cardImage.addEventListener('click', imageZoom);
+    
+    return cardItem;
+}
+
+function cardInitial() {
+    initialCards.forEach(({name, link}) => card.append(createCards(name, link)));    
+}
+
+function cardSubmitHandler(evt) {
+    evt.preventDefault();
+    card.prepend(createCards(addNameInput.value, addCardInput.value));
+    addNameInput.value = '';
+    addCardInput.value = '';
+    popupToggle(popupAdd);
 }
 
 popupOpen.addEventListener('click', popupEditForm);
 popupClose.addEventListener('click', () => popupToggle(popup));
 formEdit.addEventListener('submit', formSubmitHandler);
 
-function createCards(name, image) {
-    const elementItem = elementTemplate.cloneNode(true);
-    elementItem.querySelector('.element__image').src = image;
-    elementItem.querySelector('.element__image').alt = name;
-    elementItem.querySelector('.element__caption').textContent = name;
-    //Лайки
-    elementItem.querySelector('.element__like').addEventListener('click', function(evt) {
-        evt.target.classList.toggle('element__like_active');
-    });
-    //Удаление карточек
-    elementItem.querySelector('.element__delete').addEventListener('click', function(evt) {
-        evt.target.parentElement.classList.add('element__delete_active');
-    });
-    elementItem.querySelector('.element__image').addEventListener('click', function(evt) {
-        popupToggle(zoom);
-        zoomName.textContent = name;
-        zoomImage.src = evt.target.src;
-        zoomImage.alt = name;
-    });
-    return elementItem;
-}
-
-initialCards.forEach(function (card) {
-    element.append(createCards(card.name, card.link));
-})
-
-function cardSubmitHandler(evt) {
-    evt.preventDefault();
-    element.prepend(createCards(addNameInput.value, addCardInput.value));
-    popupToggle(popupAdd);
-    addNameInput.value = '';
-    addCardInput.value = '';
-}
-
 formAdd.addEventListener('submit', cardSubmitHandler);
 zoomBtnClose.addEventListener('click', () => popupToggle(zoom));
 popupAddButton.addEventListener('click', () => popupToggle(popupAdd));
 popupCloseAddForm.addEventListener('click', () => popupToggle(popupAdd));
+
+cardInitial();

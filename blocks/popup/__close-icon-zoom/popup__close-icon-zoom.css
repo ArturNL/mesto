@@ -1,0 +1,19 @@
+.popup__close-icon-zoom {
+    display: flex;
+    margin: 0;
+    margin-left: 98%;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../../images/CloseIcon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-radius: 2px;
+    outline: none;
+}
+
+.popup__close-icon-zoom:hover {
+    opacity: 0.6;
+    border: 0;
+}

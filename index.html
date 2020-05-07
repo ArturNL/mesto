@@ -22,43 +22,15 @@
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
-<!--Попап editform-->        
-        <section class="popup">
-            <form class="popup__container">
-                <button class="popup__close-icon" type="button"></button>
-                <p class="popup__title">Редактировать профиль</p>
-                <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто">
-                <input class="popup__text" type="text" name="job" placeholder="Исследователь океана">
-                <input class="popup__button" type="submit" value="Сохранить">
-            </form>
-        </section>
-<!--Попап addCard-->
-        <section class="popup-add">
-            <form class="popup-add__container">
-                <button class="popup-add__close-icon" type="button"></button>
-                <p class="popup-add__title">Новое место</p>
-                <input class="popup-add__name" name="name" type="text" placeholder="Название">
-                <input class="popup-add__link" name="image" type="url" placeholder="Ссылка на картинку">
-                <input class="popup-add__button" type="submit" value="Создать">
-            </form>
-        </section>
-<!--Попап Zoom-->
-        <section class="popup-zoom">
-            <div class="popup-zoom__container">
-                <button class="popup-zoom__close-icon" type="button"></button>
-                <img class="popup-zoom__image" alt="">
-                <p class="popup-zoom__name"></p>
-            </div>
-        </section>
 <!--Элементы-->
-        <section class="element">
-            <template id="element-template">
-                <div class="element__item">
-                    <button class="element__delete"></button>
-                    <img class="element__image" alt="">
-                    <div class="element__card">
-                        <p class="element__caption"></p>
-                        <button class="element__like" type="button"></button>
+        <section class="card">
+            <template id="card-template">
+                <div class="card__container">
+                    <button class="card__delete"></button>
+                    <img class="card__image" alt="">
+                    <div class="card__item">
+                        <p class="card__caption"></p>
+                        <button class="card__like" type="button"></button>
                     </div>
                 </div>
             </template>
@@ -68,6 +40,34 @@
             <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
         </footer>
     </div>
+<!--Попап editform-->        
+    <section class="popup">
+        <form class="popup__container">
+            <button class="popup__close-icon" type="button"></button>
+            <p class="popup__title">Редактировать профиль</p>
+            <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
+            <input class="popup__text" type="text" name="job" placeholder="Исследователь океана" required>
+            <input class="popup__button" type="submit" value="Сохранить">
+        </form>
+    </section>
+<!--Попап addCard-->
+    <section class="popup" id="popup-add">
+        <form class="popup__container" id="popup-add__container">
+            <button class="popup__close-icon" type="button" id="popup-add__close"></button>
+            <p class="popup__title">Новое место</p>
+            <input class="popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" required>
+            <input class="popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
+            <input class="popup__button" type="submit" value="Создать" id="popup-add__button">
+        </form>
+    </section>
+<!--Попап Zoom-->
+    <section class="popup" id="popup-zoom">
+        <div class="popup__container-zoom">
+            <button class="popup__close-icon-zoom" type="button"></button>
+            <img class="popup__image" alt="">
+            <p class="popup__caption"></p>
+        </div>
+    </section>
     <script src="./page/index.js"></script>
 </body>
 </html>

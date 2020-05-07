@@ -1,0 +1,24 @@
+.card__container {
+    position: relative;
+    margin: 0 auto;
+    border: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 451px) and (max-width: 800px) {
+    .card__container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card__container {
+        width: 90%;
+        margin-bottom: 18px;
+    }
+
+    .card__container:last-of-type {
+        margin-bottom: 0;
+    }
+}
