@@ -1,4 +1,3 @@
-@import url('./__container/card__container.css');
 @import url('./__delete/card__delete.css');
 @import url('./__image/card__image.css');
 @import url('./__item/card__item.css');
@@ -8,37 +7,27 @@
 @import url('./__delete/_active/card__delete_active.css');
 
 .card {
+    width: 282px;
     position: relative;
-    max-width: 882px;
-    margin: 51px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 21px;
-    column-gap: 18px;
+    margin: 0 auto;
+    border: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 
-@media screen and (min-width: 700px) and (max-width: 899px) {
+@media screen and (min-width: 451px) and (max-width: 800px) {
     .card {
-        max-width: 90%;
-    }
-}
-
-@media screen and (min-width: 451px) and (max-width: 699px) {
-    .card {
-        max-width: 90%;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 450px) {
     .card {
-        max-width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 40px auto 0;
-        padding: 0;
+        width: 90%;
+        margin-bottom: 18px;
+    }
+
+    .card:last-of-type {
+        margin-bottom: 0;
     }
 }

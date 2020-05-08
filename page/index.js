@@ -7,7 +7,7 @@ const formEdit = document.querySelector('.popup__container');
 const nameInput = formEdit.querySelector('.popup__name');
 const jobInput = formEdit.querySelector('.popup__text');
 const popupAdd = document.querySelector('#popup-add');
-const card = document.querySelector('.card');
+const cards = document.querySelector('.cards');
 const popupAddButton = document.querySelector('.profile__add-button');
 const popupCloseAddForm = popupAdd.querySelector('#popup-add__close');
 const formAdd = document.querySelector('#popup-add__container');
@@ -70,9 +70,17 @@ function likeActive(evt) {
     evt.target.classList.toggle('card__like_active');
 }
 
+//ф-я увелеичения изображения
+function imageZoom(evt) {
+    zoomName.textContent = evt.target.alt;
+    zoomImage.src = evt.target.src;
+    zoomImage.alt = evt.target.alt;
+    popupToggle(zoom);
+}
+
 //ф-я для удаления
 function cardDelete(evt) {
-    const removeCard = evt.target.closest('.card__container');
+    const removeCard = evt.target.closest('.card');
     
     const cardLike = removeCard.querySelector('.card__like');
     cardLike.removeEventListener('click', likeActive);
@@ -84,14 +92,6 @@ function cardDelete(evt) {
     zoomImageCard.removeEventListener('click', imageZoom);
 
     removeCard.remove();
-}
-
-//ф-я увелеичения изображения
-function imageZoom(evt) {
-    zoomName.textContent = evt.target.alt;
-    zoomImage.src = evt.target.src;
-    zoomImage.alt = evt.target.alt;
-    popupToggle(zoom);
 }
 
 function createCards(name, image) {
@@ -111,12 +111,12 @@ function createCards(name, image) {
 }
 
 function cardInitial() {
-    initialCards.forEach(({name, link}) => card.append(createCards(name, link)));    
+    initialCards.forEach(({name, link}) => cards.append(createCards(name, link)));    
 }
 
 function cardSubmitHandler(evt) {
     evt.preventDefault();
-    card.prepend(createCards(addNameInput.value, addCardInput.value));
+    cards.prepend(createCards(addNameInput.value, addCardInput.value));
     addNameInput.value = '';
     addCardInput.value = '';
     popupToggle(popupAdd);
