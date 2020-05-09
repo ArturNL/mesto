@@ -1,14 +1,14 @@
 .card__like {
-    width: 25px;
-    height: 25px;
-    margin-top: 0;
-    margin-right: 7px;
+    width: 20.76px;
+    height: 18.13px;
+    margin-top: 5px;
+    margin-right: 18px;
     background-color: #ffffff;
-    border: none;
+    border: 0;
     background-image: url('../../../images/heartlike.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: contain;
     outline: none;
 }
 
