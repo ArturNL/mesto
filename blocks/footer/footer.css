@@ -5,8 +5,16 @@
     max-width: 882px;
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (min-width: 451px) and (max-width: 899px) {
     .footer {
         max-width: 90%;
+        /*margin: 48px auto 36px;*/
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer {
+        max-width: 80%;
+        margin: 48px auto 36px;
     }
 }

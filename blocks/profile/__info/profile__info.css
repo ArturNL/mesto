@@ -1,5 +1,6 @@
 .profile__info {
     width: 400px;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     color: #ffffff;
@@ -9,6 +10,6 @@
     .profile__info {
         max-width: 100%;
         justify-content: center;
-        margin: 10px auto 0;
+        margin: 0 auto;
     }
 }
