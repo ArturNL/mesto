@@ -3,12 +3,13 @@
     display: -ms-flexbox;
     display: flex;
     margin: 0;
-    margin-left: 98%;
-    width: 60px;
-    height: 60px;
+    margin-left: 100%;
+    width: 40px;
+    height: 40px;
     background-image: url('../../../images/CloseIcon.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 120%;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     border-radius: 2px;
@@ -18,4 +19,11 @@
 .popup__close-icon-zoom:hover {
     opacity: 0.6;
     border: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .popup__close-icon-zoom {
+        margin-left: 98%;
+        background-size: 90%;
+    }
 }

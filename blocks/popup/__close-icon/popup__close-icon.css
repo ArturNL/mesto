@@ -3,13 +3,14 @@
     display: -ms-flexbox;
     display: flex;
     margin: auto;
-    margin-top: -50px;
-    margin-left: 420px;
-    width: 60px;
-    height: 60px;
+    margin-top: -35px;
+    margin-left: 425px;
+    width: 40px;
+    height: 40px;
     background-image: url('../../../images/CloseIcon.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 140%;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     border-radius: 2px;
@@ -23,6 +24,7 @@
 
 @media screen and (max-width: 500px) {
     .popup__close-icon {
-        margin-left: 95%;
+        margin-left: 98%;
+        background-size: 100%;
     }
 }

@@ -16,6 +16,9 @@
 @media screen and (max-width: 500px) {
     .popup__text {
         width: 80%;
+        margin-top: 20px;
         margin-left: 10%;
+        font-size: 11px;
+        line-height: 15px;
     }
 }

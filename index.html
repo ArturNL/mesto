@@ -39,35 +39,35 @@
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
         </footer>
-    </div>
 <!--Попап editform-->        
-    <section class="popup">
-        <form class="popup__container">
-            <button class="popup__close-icon" type="button"></button>
-            <p class="popup__title">Редактировать профиль</p>
-            <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
-            <input class="popup__text" type="text" name="job" placeholder="Исследователь океана" required>
-            <input class="popup__button" type="submit" value="Сохранить">
-        </form>
-    </section>
+        <section class="popup">
+            <form class="popup__container">
+                <button class="popup__close-icon" type="button"></button>
+                <p class="popup__title">Редактировать профиль</p>
+                <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
+                <input class="popup__text" type="text" name="job" placeholder="Исследователь океана" required>
+                <input class="popup__button" type="submit" value="Сохранить">
+            </form>
+        </section>
 <!--Попап addCard-->
-    <section class="popup" id="popup-add">
-        <form class="popup__container" id="popup-add__container">
-            <button class="popup__close-icon" type="button" id="popup-add__close"></button>
-            <p class="popup__title">Новое место</p>
-            <input class="popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" required>
-            <input class="popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
-            <input class="popup__button" type="submit" value="Создать" id="popup-add__button">
-        </form>
-    </section>
+        <section class="popup" id="popup-add">
+            <form class="popup__container" id="popup-add__container">
+                <button class="popup__close-icon" type="button" id="popup-add__close"></button>
+                <p class="popup__title">Новое место</p>
+                <input class="popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" required>
+                <input class="popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
+                <input class="popup__button" type="submit" value="Создать" id="popup-add__button">
+            </form>
+        </section>
 <!--Попап Zoom-->
-    <section class="popup" id="popup-zoom">
-        <div class="popup__container-zoom">
-            <button class="popup__close-icon-zoom" type="button"></button>
-            <img class="popup__image" alt="">
-            <p class="popup__caption"></p>
-        </div>
-    </section>
+        <section class="popup" id="popup-zoom">
+            <div class="popup__container-zoom">
+                <button class="popup__close-icon-zoom" type="button"></button>
+                <img class="popup__image" alt="">
+                <p class="popup__caption"></p>
+            </div>
+        </section>
+    </div>
     <script src="./page/index.js"></script>
 </body>
 </html>

@@ -10,9 +10,19 @@
     column-gap: 18px;
 }
 
-@media screen and (min-width: 700px) and (max-width: 899px) {
+@media screen and (min-width: 800px) and (max-width: 899px) {
     .cards {
         max-width: 90%;
+        column-gap: 12px;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+    .cards {
+        max-width: 95%;
+        column-gap: 12px;
+        margin-left: auto;
     }
 }
 
