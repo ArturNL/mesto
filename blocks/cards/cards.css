@@ -1,7 +1,6 @@
 .cards {
     position: relative;
     max-width: 882px;
-    min-height: 25vh;
     margin: 51px auto 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
