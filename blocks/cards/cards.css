@@ -1,7 +1,10 @@
 .cards {
     position: relative;
     max-width: 882px;
+    min-height: 400px;
     margin: 51px auto 0;
+    display: -moz-grid;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -36,10 +39,15 @@
 @media screen and (max-width: 550px) {
     .cards {
         max-width: 90%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin: 36px auto 0;
         padding: 0;
+        row-gap: 0;
     }
 }

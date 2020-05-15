@@ -27,6 +27,9 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
+    z-index: 12;
     visibility: hidden;
-    transition: visibility 0s, opacity .5s, linear .5s;
+    -webkit-transition: visibility .5s, opacity .5s;
+    -o-transition: visibility .5s, opacity .5s;
+    transition: visibility .5s, opacity .5s;
 }

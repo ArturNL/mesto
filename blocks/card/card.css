@@ -10,7 +10,6 @@
     width: 282px;
     position: relative;
     margin: 0 auto;
-    border: 0;
     background-color: #ffffff;
     border-radius: 10px;
 }
@@ -23,6 +22,7 @@
 
 @media screen and (max-width: 550px) {
     .card {
+        margin: 0;
         margin-bottom: 20px;
     }
 
