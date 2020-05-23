@@ -7,8 +7,11 @@
 @import url('./__name/popup__name.css');
 @import url('./__text/popup__text.css');
 @import url('./__button/popup__button.css');
+@import url('./__button/_disabled/popup__button_disabled.css');
 @import url('./__image/popup__image.css');
 @import url('./__caption/popup__caption.css');
+@import url('./__input-error/popup__input-error.css');
+@import url('./__input-error/_visible/popup__input-error_visible.css');
 
 .popup {
     width: 100%;

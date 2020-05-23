@@ -3,7 +3,7 @@ const popupOpen = document.querySelector('.profile__edit-button');
 const popupClose = popup.querySelector('.popup__close-icon');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__text');
-const formEdit = document.querySelector('.popup__container');
+const formEdit = document.querySelector('.popup__container')
 const nameInput = formEdit.querySelector('.popup__name');
 const jobInput = formEdit.querySelector('.popup__text');
 const popupAdd = document.querySelector('#popup-add');
@@ -18,6 +18,8 @@ const zoom = document.querySelector('#popup-zoom');
 const zoomBtnClose = zoom.querySelector('.popup__close-icon-zoom');
 const zoomName = zoom.querySelector('.popup__caption');
 const zoomImage = zoom.querySelector('.popup__image');
+const spanError = Array.from(document.querySelectorAll('.popup__input-error'));
+const popupInput = Array.from(document.querySelectorAll('.popup__input'));
 
 const initialCards = [
     {
@@ -45,24 +47,75 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-
-//функция открыть-закрыть popup
-function popupToggle(form) {
-    form.classList.toggle('popup_opened');
+//ф-я удаление span
+function deleteErrors() {
+    spanError.forEach((span) => {
+        span.textContent = '';
+    });
+    popupInput.forEach((input) => {
+        input.classList.remove('popup__name_type_error');
+    });
 }
+
+function openPopup(elem) {
+    elem.classList.add('popup_opened');
+    const popupOpened = document.querySelector('.popup_opened');
+    document.addEventListener('keydown', (evt) => {
+        if(evt.key === 'Escape') {
+            closePopup(popupOpened);
+        }
+    });
+    document.addEventListener('click', (evt) => {
+        if(evt.target.classList.contains('popup_opened')) {
+            closePopup(popupOpened);
+        }
+    });
+}
+
+function closePopup(elem) {
+    elem.classList.remove('popup_opened');
+    document.removeEventListener('keydown', (evt) => {
+        if(evt.key === 'Escape') {
+            document.querySelector('.popup_opened').classList.remove('popup_opened');
+        }
+    });
+    document.removeEventListener('click', (evt) => {
+        if(evt.target.classList.contains('popup_opened')) {
+            closePopup(popupOpened);
+        }
+    });
+}
+
+function formPopupAddImage(elem) {
+    if (!elem.classList.contains('popup_opened')) {
+    addNameInput.value = "";
+    addCardInput.value = "";
+    };
+    openPopup(elem)
+    deleteErrors()
+};
+
+function formPopupEditProfile(elem) {
+    if (!elem.classList.contains('popup_opened')) {
+        nameInput.value = name.textContent;
+        jobInput.value = job.textContent;
+    };
+    openPopup(elem)
+    deleteErrors()
+};
 
 //функция редактирования профиля
 function formSubmitHandler(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;    
-    popupToggle(popup);
+    closePopup(popup);
 }
 
 function popupEditForm() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
-    popupToggle(popup);
+    openPopup(popup);
 }
 
 //ф-я для лайков
@@ -75,7 +128,7 @@ function imageZoom(evt) {
     zoomName.textContent = evt.target.alt;
     zoomImage.src = evt.target.src;
     zoomImage.alt = evt.target.alt;
-    popupToggle(zoom);
+    openPopup(zoom);
 }
 
 //ф-я для удаления
@@ -119,16 +172,14 @@ function cardSubmitHandler(evt) {
     cards.prepend(createCards(addNameInput.value, addCardInput.value));
     addNameInput.value = '';
     addCardInput.value = '';
-    popupToggle(popupAdd);
+    closePopup(popupAdd);
 }
 
 popupOpen.addEventListener('click', popupEditForm);
-popupClose.addEventListener('click', () => popupToggle(popup));
+popupClose.addEventListener('click', () => closePopup(popup));
 formEdit.addEventListener('submit', formSubmitHandler);
-
 formAdd.addEventListener('submit', cardSubmitHandler);
-zoomBtnClose.addEventListener('click', () => popupToggle(zoom));
-popupAddButton.addEventListener('click', () => popupToggle(popupAdd));
-popupCloseAddForm.addEventListener('click', () => popupToggle(popupAdd));
-
+zoomBtnClose.addEventListener('click', () => closePopup(zoom));
+popupAddButton.addEventListener('click', () => openPopup(popupAdd));
+popupCloseAddForm.addEventListener('click', () => closePopup(popupAdd));
 cardInitial();

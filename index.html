@@ -41,33 +41,38 @@
         </footer>
 <!--Попап editform-->        
         <section class="popup">
-            <form class="popup__container">
-                <button class="popup__close-icon" type="button"></button>
+            <form class="popup__container" name="formEdit" novalidate>
+                <button class="popup__close-icon" type="reset"></button>
                 <p class="popup__title">Редактировать профиль</p>
-                <input class="popup__name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
-                <input class="popup__text" type="text" name="job" placeholder="Исследователь океана" required>
-                <input class="popup__button" type="submit" value="Сохранить">
+                <input class="popup__input popup__name" type="text" name="username" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
+                <span class="popup__input-error" id="name-input-error"></span>
+                <input class="popup__input popup__text" type="text" name="job" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
+                <span class="popup__input-error" id="job-input-error"></span>
+                <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </section>
 <!--Попап addCard-->
-        <section class="popup" id="popup-add">
-            <form class="popup__container" id="popup-add__container">
-                <button class="popup__close-icon" type="button" id="popup-add__close"></button>
+        <section class="popup" id="popup-add" novalidate>
+            <form class="popup__container" id="popup-add__container" name="addForm">
+                <button class="popup__close-icon" type="reset" id="popup-add__close"></button>
                 <p class="popup__title">Новое место</p>
-                <input class="popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" required>
-                <input class="popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
-                <input class="popup__button" type="submit" value="Создать" id="popup-add__button">
+                <input class="popup__input popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" minlength="2" maxlength="30" required>
+                <span class="popup__input-error" id="place-input-error"></span>
+                <input class="popup__input popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
+                <span class="popup__input-error" id="link-input-error"></span>
+                <button class="popup__button" type="submit" id="popup-add__button">Создать</button>
             </form>
         </section>
 <!--Попап Zoom-->
         <section class="popup popup_opacity" id="popup-zoom">
             <div class="popup__container-zoom">
-                <button class="popup__close-icon-zoom" type="button"></button>
+                <button class="popup__close-icon-zoom" type="reset"></button>
                 <img class="popup__image" alt="">
                 <p class="popup__caption"></p>
             </div>
         </section>
     </div>
     <script src="./page/index.js"></script>
+    <script src="./page/validate.js"></script>
 </body>
 </html>
