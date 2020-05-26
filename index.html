@@ -13,7 +13,7 @@
             <img class="logo" src="./images/logo.svg" alt="Логотип">
         </header>
 <!--Профиль-->
-        <section class="profile">
+        <main class="profile">
             <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
             <div class="profile__info">
                 <p class="profile__name">Жак-Ив Кусто</p>
@@ -21,7 +21,7 @@
                 <p class="profile__text">Исследователь океана</p>
             </div>
             <button class="profile__add-button" type="button"></button>
-        </section>
+        </main>
 <!--Элементы-->
         <section class="cards">
             <template id="card-template">
@@ -44,21 +44,21 @@
             <form class="popup__container" name="formEdit" novalidate>
                 <button class="popup__close-icon" type="reset"></button>
                 <p class="popup__title">Редактировать профиль</p>
-                <input class="popup__input popup__name" type="text" name="username" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
+                <input class="popup__input popup__name" type="text" id="name-input" name="username" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
                 <span class="popup__input-error" id="name-input-error"></span>
-                <input class="popup__input popup__text" type="text" name="job" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
+                <input class="popup__input popup__text" type="text" id="job-input" name="job" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
                 <span class="popup__input-error" id="job-input-error"></span>
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </section>
 <!--Попап addCard-->
-        <section class="popup" id="popup-add" novalidate>
-            <form class="popup__container" id="popup-add__container" name="addForm">
+        <section class="popup" id="popup-add">
+            <form class="popup__container" id="popup-add__container" name="addForm" novalidate>
                 <button class="popup__close-icon" type="reset" id="popup-add__close"></button>
                 <p class="popup__title">Новое место</p>
-                <input class="popup__input popup__name" name="name" type="text" placeholder="Название" id="popup-add__name" minlength="2" maxlength="30" required>
+                <input class="popup__input popup__name" name="name" type="text" placeholder="Название" id="place-input" minlength="1" maxlength="30" required>
                 <span class="popup__input-error" id="place-input-error"></span>
-                <input class="popup__input popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="popup-add__link" required>
+                <input class="popup__input popup__text" name="image" type="url" placeholder="Ссылка на картинку" id="link-input" required>
                 <span class="popup__input-error" id="link-input-error"></span>
                 <button class="popup__button" type="submit" id="popup-add__button">Создать</button>
             </form>

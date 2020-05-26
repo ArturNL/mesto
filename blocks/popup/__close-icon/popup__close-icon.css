@@ -1,6 +1,4 @@
 .popup__close-icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: auto;
     margin-top: -35px;

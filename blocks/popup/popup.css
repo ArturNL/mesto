@@ -19,20 +19,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
     z-index: 12;
     visibility: hidden;
-    -webkit-transition: visibility .5s, opacity .5s;
-    -o-transition: visibility .5s, opacity .5s;
     transition: visibility .5s, opacity .5s;
 }

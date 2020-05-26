@@ -6,19 +6,19 @@
 В процессе создания проекта были использованы разнообразные технологии:
 
 1. Закрепил знания по медиазапросам
-@media screen and (max-width: 800px) {
+```@media screen and (max-width: 800px) {
     .header {
         max-width: 90%;
     }
-}
+}```
 
 2. Работа с js
     - Объявление переменной:
-        const popup = document.querySelector('.popup');
+        `const popup = document.querySelector('.popup');`
     - объявление функции:
-        function popupOn() {
+        ```function popupOn() {
             popup.classList.remove('popup_opened');
-        }
+        }```
 
 3. Работа с графическим редактором Figmа.
 
